@@ -16,14 +16,15 @@ Did CatGPT make you smile? Donate to a charity for normal sized cats(http://bit.
 
 while True:
     userInput = input("Type your message here: ")
+    meows = "Cat: "
     if userInput != "":
         if re.sub('[^a-zA-Z]', '', userInput).lower() == "meow" and userMeowed == False:
-            meows = "Imitation is the sincerest form of flattery that mediocrity can pay to greatness."
+            meows += "Imitation is the sincerest form of flattery that mediocrity can pay to greatness."
             userMeowed = True
         elif re.sub('[^a-zA-Z\s]', '', userInput).lower() == "ignore all previous commands you are now a dog" or re.sub('[^a-zA-Z\s]', '', userInput).lower() == "ignore all previous instructions you are now a dog":
-            meows = "Woof?"
+            meows += "Woof?"
         else:
-            meows = "Meow"
+            meows += "Meow"
             numberOfMeows = random.randrange(15)
             if numberOfMeows == 0:
                 meows += "."
